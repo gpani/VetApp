@@ -102,36 +102,36 @@
             // 
             // btnAgregarMascota
             // 
-            this.btnAgregarMascota.Location = new System.Drawing.Point(39, 323);
+            this.btnAgregarMascota.Location = new System.Drawing.Point(25, 259);
             this.btnAgregarMascota.Name = "btnAgregarMascota";
-            this.btnAgregarMascota.Size = new System.Drawing.Size(199, 94);
+            this.btnAgregarMascota.Size = new System.Drawing.Size(133, 94);
             this.btnAgregarMascota.TabIndex = 7;
             this.btnAgregarMascota.Text = "Agregar Mascota";
             this.btnAgregarMascota.UseVisualStyleBackColor = true;
             // 
             // btnModificarMascota
             // 
-            this.btnModificarMascota.Location = new System.Drawing.Point(269, 323);
+            this.btnModificarMascota.Location = new System.Drawing.Point(164, 259);
             this.btnModificarMascota.Name = "btnModificarMascota";
-            this.btnModificarMascota.Size = new System.Drawing.Size(199, 94);
+            this.btnModificarMascota.Size = new System.Drawing.Size(133, 94);
             this.btnModificarMascota.TabIndex = 8;
             this.btnModificarMascota.Text = "Modificar Mascota";
             this.btnModificarMascota.UseVisualStyleBackColor = true;
             // 
             // btnHistorialM
             // 
-            this.btnHistorialM.Location = new System.Drawing.Point(492, 323);
+            this.btnHistorialM.Location = new System.Drawing.Point(304, 259);
             this.btnHistorialM.Name = "btnHistorialM";
-            this.btnHistorialM.Size = new System.Drawing.Size(199, 94);
+            this.btnHistorialM.Size = new System.Drawing.Size(133, 94);
             this.btnHistorialM.TabIndex = 9;
             this.btnHistorialM.Text = "Ver Historial Médico";
             this.btnHistorialM.UseVisualStyleBackColor = true;
             // 
             // btnEliminarMascota
             // 
-            this.btnEliminarMascota.Location = new System.Drawing.Point(704, 323);
+            this.btnEliminarMascota.Location = new System.Drawing.Point(453, 259);
             this.btnEliminarMascota.Name = "btnEliminarMascota";
-            this.btnEliminarMascota.Size = new System.Drawing.Size(199, 94);
+            this.btnEliminarMascota.Size = new System.Drawing.Size(133, 94);
             this.btnEliminarMascota.TabIndex = 10;
             this.btnEliminarMascota.Text = "Eliminar Mascota";
             this.btnEliminarMascota.UseVisualStyleBackColor = true;
@@ -156,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 450);
+            this.ClientSize = new System.Drawing.Size(624, 450);
             this.Controls.Add(this.pesoMascota);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnEliminarMascota);
@@ -171,7 +171,7 @@
             this.Controls.Add(this.txtNombreM);
             this.Controls.Add(this.label1);
             this.Name = "frmMascotas";
-            this.Text = "frmMascotas";
+            this.Text = "Datos Mascotas";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -17,14 +17,40 @@ namespace VetApp
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnSalida_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnTurnoVet_Click(object sender, EventArgs e)
+        {
+            frmAppVet form = new frmAppVet();
+            form.Show();
+        }
+
+        private void btnPelu_Click(object sender, EventArgs e)
+        {
+            frmTurnoPelu form = new frmTurnoPelu();
+            form.Show();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            frmClient form = new frmClient();
+            form.Show();
+        }
+
+        private void btnMascotas_Click(object sender, EventArgs e)
+        {
+            frmMascotas form = new frmMascotas ();
+            form.Show();
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            frmInventory form = new frmInventory();
+            form.Show();
         }
     }
 }
