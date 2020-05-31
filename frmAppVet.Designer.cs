@@ -104,7 +104,7 @@
             this.removeClient.Name = "removeClient";
             this.removeClient.Size = new System.Drawing.Size(64, 64);
             this.removeClient.TabIndex = 16;
-            this.removeClient.Text = "Eliminar Cliente";
+            this.removeClient.Text = "Eliminar Consulta";
             this.removeClient.UseVisualStyleBackColor = true;
             // 
             // editClient
@@ -113,7 +113,7 @@
             this.editClient.Name = "editClient";
             this.editClient.Size = new System.Drawing.Size(64, 64);
             this.editClient.TabIndex = 17;
-            this.editClient.Text = "Modificar Cliente";
+            this.editClient.Text = "Modificar Consulta";
             this.editClient.UseVisualStyleBackColor = true;
             // 
             // addClient
@@ -122,8 +122,9 @@
             this.addClient.Name = "addClient";
             this.addClient.Size = new System.Drawing.Size(64, 64);
             this.addClient.TabIndex = 18;
-            this.addClient.Text = "Agregar Cliente";
+            this.addClient.Text = "Agregar Consulta";
             this.addClient.UseVisualStyleBackColor = true;
+            this.addClient.Click += new System.EventHandler(this.addClient_Click);
             // 
             // comboBox1
             // 
