@@ -21,5 +21,10 @@ namespace VetApp
         {
 
         }
+
+        private void dueñoM_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
