@@ -16,5 +16,15 @@ namespace VetApp
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalida_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
