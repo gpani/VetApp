@@ -41,6 +41,8 @@
             this.btnEliminarMascota = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pesoMascota = new System.Windows.Forms.Label();
+            this.txtDueño = new System.Windows.Forms.TextBox();
+            this.dueñoM = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -129,7 +131,7 @@
             // 
             // btnEliminarMascota
             // 
-            this.btnEliminarMascota.Location = new System.Drawing.Point(453, 259);
+            this.btnEliminarMascota.Location = new System.Drawing.Point(443, 259);
             this.btnEliminarMascota.Name = "btnEliminarMascota";
             this.btnEliminarMascota.Size = new System.Drawing.Size(133, 94);
             this.btnEliminarMascota.TabIndex = 10;
@@ -152,11 +154,30 @@
             this.pesoMascota.TabIndex = 12;
             this.pesoMascota.Text = "Peso";
             // 
+            // txtDueño
+            // 
+            this.txtDueño.Location = new System.Drawing.Point(39, 138);
+            this.txtDueño.Name = "txtDueño";
+            this.txtDueño.Size = new System.Drawing.Size(334, 22);
+            this.txtDueño.TabIndex = 13;
+            // 
+            // dueñoM
+            // 
+            this.dueñoM.AutoSize = true;
+            this.dueñoM.Location = new System.Drawing.Point(379, 141);
+            this.dueñoM.Name = "dueñoM";
+            this.dueñoM.Size = new System.Drawing.Size(50, 17);
+            this.dueñoM.TabIndex = 14;
+            this.dueñoM.Text = "Dueño";
+            this.dueñoM.Click += new System.EventHandler(this.dueñoM_Click);
+            // 
             // frmMascotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 450);
+            this.ClientSize = new System.Drawing.Size(603, 393);
+            this.Controls.Add(this.dueñoM);
+            this.Controls.Add(this.txtDueño);
             this.Controls.Add(this.pesoMascota);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnEliminarMascota);
@@ -192,5 +213,7 @@
         private System.Windows.Forms.Button btnEliminarMascota;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label pesoMascota;
+        private System.Windows.Forms.TextBox txtDueño;
+        private System.Windows.Forms.Label dueñoM;
     }
 }
