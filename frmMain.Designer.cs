@@ -44,6 +44,7 @@
             this.btnClientes.TabIndex = 0;
             this.btnClientes.Text = "Datos de Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnMascotas
             // 
@@ -53,7 +54,7 @@
             this.btnMascotas.TabIndex = 1;
             this.btnMascotas.Text = "Datos de Mascotas";
             this.btnMascotas.UseVisualStyleBackColor = true;
-            this.btnMascotas.Click += new System.EventHandler(this.button1_Click);
+            this.btnMascotas.Click += new System.EventHandler(this.btnMascotas_Click);
             // 
             // btnInventario
             // 
@@ -63,6 +64,7 @@
             this.btnInventario.TabIndex = 2;
             this.btnInventario.Text = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = true;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // btnTurnoVet
             // 
@@ -72,6 +74,7 @@
             this.btnTurnoVet.TabIndex = 3;
             this.btnTurnoVet.Text = "Turno Veterinaria";
             this.btnTurnoVet.UseVisualStyleBackColor = true;
+            this.btnTurnoVet.Click += new System.EventHandler(this.btnTurnoVet_Click);
             // 
             // btnPelu
             // 
@@ -81,6 +84,7 @@
             this.btnPelu.TabIndex = 4;
             this.btnPelu.Text = "Turno Peluqueria";
             this.btnPelu.UseVisualStyleBackColor = true;
+            this.btnPelu.Click += new System.EventHandler(this.btnPelu_Click);
             // 
             // btnSalida
             // 
