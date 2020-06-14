@@ -48,10 +48,5 @@ namespace VetApp
             form.Show();
         }
 
-        private void btnInventario_Click(object sender, EventArgs e)
-        {
-            frmInventory form = new frmInventory();
-            form.Show();
-        }
     }
 }
