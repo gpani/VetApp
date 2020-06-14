@@ -87,14 +87,14 @@ namespace VetApp
     {
         public List<Mascota> mascotas;
         public List<Cliente> clientes;
-        public List<ConsultaVeterinaia> consultasVeterinaria;
+        public List<ConsultaVeterinaria> consultasVeterinaria;
         public List<ConsultaPeluqueria> consultasPeluqueria;
         
         public Veterinaria()
         {
             mascotas = new List<Mascota>();
             clientes = new List<Cliente>();
-            consultasVeterinaria = new List<ConsultaVeterinaia>();
+            consultasVeterinaria = new List<ConsultaVeterinaria>();
             consultasPeluqueria = new List<ConsultaPeluqueria>();
         }
 
