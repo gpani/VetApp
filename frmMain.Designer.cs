@@ -30,7 +30,6 @@
         {
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnMascotas = new System.Windows.Forms.Button();
-            this.btnInventario = new System.Windows.Forms.Button();
             this.btnTurnoVet = new System.Windows.Forms.Button();
             this.btnPelu = new System.Windows.Forms.Button();
             this.btnSalida = new System.Windows.Forms.Button();
@@ -56,19 +55,9 @@
             this.btnMascotas.UseVisualStyleBackColor = true;
             this.btnMascotas.Click += new System.EventHandler(this.btnMascotas_Click);
             // 
-            // btnInventario
-            // 
-            this.btnInventario.Location = new System.Drawing.Point(12, 166);
-            this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Size = new System.Drawing.Size(205, 71);
-            this.btnInventario.TabIndex = 2;
-            this.btnInventario.Text = "Inventario";
-            this.btnInventario.UseVisualStyleBackColor = true;
-            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
-            // 
             // btnTurnoVet
             // 
-            this.btnTurnoVet.Location = new System.Drawing.Point(12, 243);
+            this.btnTurnoVet.Location = new System.Drawing.Point(12, 166);
             this.btnTurnoVet.Name = "btnTurnoVet";
             this.btnTurnoVet.Size = new System.Drawing.Size(205, 73);
             this.btnTurnoVet.TabIndex = 3;
@@ -78,7 +67,7 @@
             // 
             // btnPelu
             // 
-            this.btnPelu.Location = new System.Drawing.Point(12, 322);
+            this.btnPelu.Location = new System.Drawing.Point(12, 245);
             this.btnPelu.Name = "btnPelu";
             this.btnPelu.Size = new System.Drawing.Size(205, 73);
             this.btnPelu.TabIndex = 4;
@@ -90,7 +79,7 @@
             // 
             this.btnSalida.BackColor = System.Drawing.SystemColors.Control;
             this.btnSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalida.Location = new System.Drawing.Point(12, 401);
+            this.btnSalida.Location = new System.Drawing.Point(12, 324);
             this.btnSalida.Name = "btnSalida";
             this.btnSalida.Size = new System.Drawing.Size(205, 39);
             this.btnSalida.TabIndex = 5;
@@ -102,11 +91,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(233, 454);
+            this.ClientSize = new System.Drawing.Size(233, 373);
             this.Controls.Add(this.btnSalida);
             this.Controls.Add(this.btnPelu);
             this.Controls.Add(this.btnTurnoVet);
-            this.Controls.Add(this.btnInventario);
             this.Controls.Add(this.btnMascotas);
             this.Controls.Add(this.btnClientes);
             this.Name = "frmMain";
@@ -119,7 +107,6 @@
 
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnMascotas;
-        private System.Windows.Forms.Button btnInventario;
         private System.Windows.Forms.Button btnTurnoVet;
         private System.Windows.Forms.Button btnPelu;
         private System.Windows.Forms.Button btnSalida;

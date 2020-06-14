@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreM = new System.Windows.Forms.TextBox();
-            this.txtEdadM = new System.Windows.Forms.TextBox();
             this.nomMascota = new System.Windows.Forms.Label();
             this.edadMascota = new System.Windows.Forms.Label();
             this.txtRazaM = new System.Windows.Forms.TextBox();
@@ -41,8 +40,10 @@
             this.btnEliminarMascota = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pesoMascota = new System.Windows.Forms.Label();
-            this.txtDueño = new System.Windows.Forms.TextBox();
             this.dueñoM = new System.Windows.Forms.Label();
+            this.numEdadM = new System.Windows.Forms.NumericUpDown();
+            this.comboCliente = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.numEdadM)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,13 +60,6 @@
             this.txtNombreM.Name = "txtNombreM";
             this.txtNombreM.Size = new System.Drawing.Size(334, 22);
             this.txtNombreM.TabIndex = 1;
-            // 
-            // txtEdadM
-            // 
-            this.txtEdadM.Location = new System.Drawing.Point(39, 50);
-            this.txtEdadM.Name = "txtEdadM";
-            this.txtEdadM.Size = new System.Drawing.Size(334, 22);
-            this.txtEdadM.TabIndex = 2;
             // 
             // nomMascota
             // 
@@ -110,6 +104,7 @@
             this.btnAgregarMascota.TabIndex = 7;
             this.btnAgregarMascota.Text = "Agregar Mascota";
             this.btnAgregarMascota.UseVisualStyleBackColor = true;
+            this.btnAgregarMascota.Click += new System.EventHandler(this.btnAgregarMascota_Click);
             // 
             // btnModificarMascota
             // 
@@ -154,13 +149,6 @@
             this.pesoMascota.TabIndex = 12;
             this.pesoMascota.Text = "Peso";
             // 
-            // txtDueño
-            // 
-            this.txtDueño.Location = new System.Drawing.Point(39, 138);
-            this.txtDueño.Name = "txtDueño";
-            this.txtDueño.Size = new System.Drawing.Size(334, 22);
-            this.txtDueño.TabIndex = 13;
-            // 
             // dueñoM
             // 
             this.dueñoM.AutoSize = true;
@@ -171,13 +159,29 @@
             this.dueñoM.Text = "Dueño";
             this.dueñoM.Click += new System.EventHandler(this.dueñoM_Click);
             // 
+            // numEdadM
+            // 
+            this.numEdadM.Location = new System.Drawing.Point(39, 50);
+            this.numEdadM.Name = "numEdadM";
+            this.numEdadM.Size = new System.Drawing.Size(334, 22);
+            this.numEdadM.TabIndex = 15;
+            // 
+            // comboCliente
+            // 
+            this.comboCliente.FormattingEnabled = true;
+            this.comboCliente.Location = new System.Drawing.Point(39, 141);
+            this.comboCliente.Name = "comboCliente";
+            this.comboCliente.Size = new System.Drawing.Size(334, 24);
+            this.comboCliente.TabIndex = 16;
+            // 
             // frmMascotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 393);
+            this.Controls.Add(this.comboCliente);
+            this.Controls.Add(this.numEdadM);
             this.Controls.Add(this.dueñoM);
-            this.Controls.Add(this.txtDueño);
             this.Controls.Add(this.pesoMascota);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnEliminarMascota);
@@ -188,11 +192,11 @@
             this.Controls.Add(this.txtRazaM);
             this.Controls.Add(this.edadMascota);
             this.Controls.Add(this.nomMascota);
-            this.Controls.Add(this.txtEdadM);
             this.Controls.Add(this.txtNombreM);
             this.Controls.Add(this.label1);
             this.Name = "frmMascotas";
             this.Text = "Datos Mascotas";
+            ((System.ComponentModel.ISupportInitialize)(this.numEdadM)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,7 +206,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombreM;
-        private System.Windows.Forms.TextBox txtEdadM;
         private System.Windows.Forms.Label nomMascota;
         private System.Windows.Forms.Label edadMascota;
         private System.Windows.Forms.TextBox txtRazaM;
@@ -213,7 +216,8 @@
         private System.Windows.Forms.Button btnEliminarMascota;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label pesoMascota;
-        private System.Windows.Forms.TextBox txtDueño;
         private System.Windows.Forms.Label dueñoM;
+        private System.Windows.Forms.NumericUpDown numEdadM;
+        private System.Windows.Forms.ComboBox comboCliente;
     }
 }

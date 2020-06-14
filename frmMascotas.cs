@@ -26,5 +26,10 @@ namespace VetApp
         {
 
         }
+
+        private void btnAgregarMascota_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

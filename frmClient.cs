@@ -29,7 +29,9 @@ namespace VetApp
 
         private void addClient_Click(object sender, EventArgs e)
         {
+            Cliente c = new Cliente(nameInput.Text, int.Parse(ageInput.Text), int.Parse(idInput.Text), phoneInput.Text, addressInput.Text);
 
+            Program.getVeterinaria().agregarCliente(c);
         }
     }
 }
