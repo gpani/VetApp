@@ -107,7 +107,14 @@ namespace VetApp
         {
             clientes.Add(c);
         }
+        public void agregarConsultaVeterinaria(ConsultaVeterinaria cv)
+        {
+            consultasVeterinaria.Add(cv);
+        }
 
-
+        public void agregarConsultaPeluqueria(ConsultaPeluqueria cp)
+        {
+            consultasPeluqueria.Add(cp);
+        }
     }
 }
