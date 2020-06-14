@@ -45,14 +45,37 @@ namespace VetApp
     }
 
     [Serializable]
-    class ConsultaVeterinaia
+    class ConsultaVeterinaria
     {
+        string nombreApellido;
+        string mascota;
+        string razon;
+        string estado;
 
+        public ConsultaVeterinaria(String nombreApellido, String mascota, String razon, String estado)
+        {
+            this.nombreApellido = nombreApellido;
+            this.mascota = mascota;
+            this.razon = razon;
+            this.estado = estado;
+        }
     }
 
     [Serializable]
     class ConsultaPeluqueria
     {
+        string nombreApellido;
+        string mascota;
+        string razon;
+        string estado;
+
+        public ConsultaPeluqueria(String nombreApellido, String mascota, String razon, String estado)
+        {
+            this.nombreApellido = nombreApellido;
+            this.mascota = mascota;
+            this.razon = razon;
+            this.estado = estado;
+        }
 
     }
 
