@@ -41,123 +41,148 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.comboVerClientes = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // addClient
             // 
-            this.addClient.Location = new System.Drawing.Point(35, 176);
+            this.addClient.Location = new System.Drawing.Point(47, 196);
+            this.addClient.Margin = new System.Windows.Forms.Padding(4);
             this.addClient.Name = "addClient";
-            this.addClient.Size = new System.Drawing.Size(64, 64);
-            this.addClient.TabIndex = 0;
+            this.addClient.Size = new System.Drawing.Size(85, 100);
+            this.addClient.TabIndex = 6;
             this.addClient.Text = "Agregar Cliente";
             this.addClient.UseVisualStyleBackColor = true;
             this.addClient.Click += new System.EventHandler(this.addClient_Click);
             // 
             // editClient
             // 
-            this.editClient.Location = new System.Drawing.Point(105, 176);
+            this.editClient.Location = new System.Drawing.Point(140, 227);
+            this.editClient.Margin = new System.Windows.Forms.Padding(4);
             this.editClient.Name = "editClient";
-            this.editClient.Size = new System.Drawing.Size(64, 64);
-            this.editClient.TabIndex = 0;
+            this.editClient.Size = new System.Drawing.Size(85, 69);
+            this.editClient.TabIndex = 8;
             this.editClient.Text = "Modificar Cliente";
             this.editClient.UseVisualStyleBackColor = true;
-            this.editClient.Click += new System.EventHandler(this.addClient_Click);
+            this.editClient.Click += new System.EventHandler(this.editClient_Click);
             // 
             // removeClient
             // 
-            this.removeClient.Location = new System.Drawing.Point(175, 176);
+            this.removeClient.Location = new System.Drawing.Point(233, 227);
+            this.removeClient.Margin = new System.Windows.Forms.Padding(4);
             this.removeClient.Name = "removeClient";
-            this.removeClient.Size = new System.Drawing.Size(64, 64);
-            this.removeClient.TabIndex = 0;
+            this.removeClient.Size = new System.Drawing.Size(85, 69);
+            this.removeClient.TabIndex = 9;
             this.removeClient.Text = "Eliminar Cliente";
             this.removeClient.UseVisualStyleBackColor = true;
-            this.removeClient.Click += new System.EventHandler(this.addClient_Click);
+            this.removeClient.Click += new System.EventHandler(this.removeClient_Click);
             // 
             // nameInput
             // 
-            this.nameInput.Location = new System.Drawing.Point(35, 31);
+            this.nameInput.Location = new System.Drawing.Point(47, 38);
+            this.nameInput.Margin = new System.Windows.Forms.Padding(4);
             this.nameInput.Name = "nameInput";
-            this.nameInput.Size = new System.Drawing.Size(172, 20);
+            this.nameInput.Size = new System.Drawing.Size(228, 22);
             this.nameInput.TabIndex = 1;
             // 
             // ageInput
             // 
-            this.ageInput.Location = new System.Drawing.Point(35, 57);
+            this.ageInput.Location = new System.Drawing.Point(47, 70);
+            this.ageInput.Margin = new System.Windows.Forms.Padding(4);
             this.ageInput.Name = "ageInput";
-            this.ageInput.Size = new System.Drawing.Size(172, 20);
-            this.ageInput.TabIndex = 1;
+            this.ageInput.Size = new System.Drawing.Size(228, 22);
+            this.ageInput.TabIndex = 2;
             // 
             // idInput
             // 
-            this.idInput.Location = new System.Drawing.Point(35, 83);
+            this.idInput.Location = new System.Drawing.Point(47, 102);
+            this.idInput.Margin = new System.Windows.Forms.Padding(4);
             this.idInput.Name = "idInput";
-            this.idInput.Size = new System.Drawing.Size(172, 20);
-            this.idInput.TabIndex = 1;
+            this.idInput.Size = new System.Drawing.Size(228, 22);
+            this.idInput.TabIndex = 3;
             // 
             // phoneInput
             // 
-            this.phoneInput.Location = new System.Drawing.Point(35, 109);
+            this.phoneInput.Location = new System.Drawing.Point(47, 134);
+            this.phoneInput.Margin = new System.Windows.Forms.Padding(4);
             this.phoneInput.Name = "phoneInput";
-            this.phoneInput.Size = new System.Drawing.Size(172, 20);
-            this.phoneInput.TabIndex = 1;
+            this.phoneInput.Size = new System.Drawing.Size(228, 22);
+            this.phoneInput.TabIndex = 4;
             // 
             // addressInput
             // 
-            this.addressInput.Location = new System.Drawing.Point(35, 135);
+            this.addressInput.Location = new System.Drawing.Point(47, 166);
+            this.addressInput.Margin = new System.Windows.Forms.Padding(4);
             this.addressInput.Name = "addressInput";
-            this.addressInput.Size = new System.Drawing.Size(172, 20);
-            this.addressInput.TabIndex = 1;
+            this.addressInput.Size = new System.Drawing.Size(228, 22);
+            this.addressInput.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(213, 31);
+            this.label1.Location = new System.Drawing.Point(284, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.Size = new System.Drawing.Size(123, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nombre y Apellido";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(213, 57);
+            this.label2.Location = new System.Drawing.Point(284, 70);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.Size = new System.Drawing.Size(41, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Edad";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(213, 83);
+            this.label3.Location = new System.Drawing.Point(284, 102);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.Size = new System.Drawing.Size(31, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "DNI";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(213, 109);
+            this.label4.Location = new System.Drawing.Point(284, 134);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 13);
+            this.label4.Size = new System.Drawing.Size(138, 17);
             this.label4.TabIndex = 2;
             this.label4.Text = "Número de Teléfono";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(213, 135);
+            this.label5.Location = new System.Drawing.Point(284, 166);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 2;
             this.label5.Text = "Domicilio";
             // 
+            // comboVerClientes
+            // 
+            this.comboVerClientes.FormattingEnabled = true;
+            this.comboVerClientes.Location = new System.Drawing.Point(140, 196);
+            this.comboVerClientes.Name = "comboVerClientes";
+            this.comboVerClientes.Size = new System.Drawing.Size(178, 24);
+            this.comboVerClientes.TabIndex = 7;
+            this.comboVerClientes.Text = "Elegir cliente existente...";
+            this.comboVerClientes.SelectedIndexChanged += new System.EventHandler(this.comboVerClientes_SelectedIndexChanged);
+            // 
             // frmClient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 345);
+            this.ClientSize = new System.Drawing.Size(491, 425);
+            this.Controls.Add(this.comboVerClientes);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -171,6 +196,7 @@
             this.Controls.Add(this.removeClient);
             this.Controls.Add(this.editClient);
             this.Controls.Add(this.addClient);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmClient";
             this.Text = "Datos de Cliente";
             this.Load += new System.EventHandler(this.frmClient_Load);
@@ -194,5 +220,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboVerClientes;
     }
 }
