@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace VetApp
 {
@@ -28,11 +29,11 @@ namespace VetApp
     [Serializable]
     class Cliente
     {
-        String nombreApellido;
-        int edad;
-        int dni;
-        String telefono;
-        String domicilio;
+        public String nombreApellido;
+        public int edad;
+        public int dni;
+        public String telefono;
+        public String domicilio;
 
         public Cliente(String nombre, int edad, int dni, String telefono, String domicilio)
         {
@@ -42,6 +43,12 @@ namespace VetApp
             this.telefono = telefono;
             this.domicilio = domicilio;
         }
+
+        public override string ToString()
+        {
+            return this.nombreApellido;
+        }
+
     }
 
     [Serializable]
@@ -82,9 +89,38 @@ namespace VetApp
 
         public void agregarCliente(Cliente c)
         {
+            foreach (Cliente cli in this.clientes)
+            {
+                if (cli.dni == c.dni)
+                {
+                    MessageBox.Show("Error: Ya existe un cliente con DNI " + c.dni);
+                    return;
+                }
+            }
             clientes.Add(c);
         }
 
+        public bool eliminarCliente(Cliente c)
+        {
+            foreach (Cliente cli in this.clientes)
+            {
+                if (cli.dni == c.dni)
+                {
+                    this.clientes.Remove(cli);
+                    return true;
+                }
+            }
+            MessageBox.Show("Error: No se pudo eliminar cliente con DNI " + c.dni);
+            return false;
+        }
+
+        public void modificarCliente(Cliente c)
+        {
+            if (eliminarCliente(c))
+            {
+                agregarCliente(c);
+            }
+        }
 
     }
 }
