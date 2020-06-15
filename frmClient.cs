@@ -39,9 +39,12 @@ namespace VetApp
         private void addClient_Click(object sender, EventArgs e)
         {
             Cliente c = new Cliente(nameInput.Text, int.Parse(ageInput.Text), int.Parse(idInput.Text), phoneInput.Text, addressInput.Text);
-            Program.getVeterinaria().agregarCliente(c);
-            refrescarListaClientes();
-            MessageBox.Show("Cliente agregado!");
+            if (Program.getVeterinaria().agregarCliente(c))
+            {
+                refrescarListaClientes();
+                MessageBox.Show("Cliente agregado!");
+            }
+            
         }
 
         private void comboVerClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,17 +61,21 @@ namespace VetApp
         private void editClient_Click(object sender, EventArgs e)
         {
             Cliente c = new Cliente(nameInput.Text, int.Parse(ageInput.Text), int.Parse(idInput.Text), phoneInput.Text, addressInput.Text);
-            Program.getVeterinaria().modificarCliente(c);
-            refrescarListaClientes();
-            MessageBox.Show("Cliente editado!");
+            if (Program.getVeterinaria().modificarCliente(c))
+            {
+                refrescarListaClientes();
+                MessageBox.Show("Cliente editado!");
+            }
         }
 
         private void removeClient_Click(object sender, EventArgs e)
         {
             Cliente c = (Cliente)comboVerClientes.SelectedItem;
-            Program.getVeterinaria().eliminarCliente(c);
-            refrescarListaClientes();
-            MessageBox.Show("Cliente eliminado!");
+            if (Program.getVeterinaria().eliminarCliente(c))
+            {
+                refrescarListaClientes();
+                MessageBox.Show("Cliente eliminado!");
+            }
         }
     }
 }

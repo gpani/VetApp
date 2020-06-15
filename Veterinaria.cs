@@ -87,17 +87,18 @@ namespace VetApp
             mascotas.Add(m);
         }
 
-        public void agregarCliente(Cliente c)
+        public bool agregarCliente(Cliente c)
         {
             foreach (Cliente cli in this.clientes)
             {
                 if (cli.dni == c.dni)
                 {
                     MessageBox.Show("Error: Ya existe un cliente con DNI " + c.dni);
-                    return;
+                    return false;
                 }
             }
             clientes.Add(c);
+            return true;
         }
 
         public bool eliminarCliente(Cliente c)
@@ -114,12 +115,16 @@ namespace VetApp
             return false;
         }
 
-        public void modificarCliente(Cliente c)
+        public bool modificarCliente(Cliente c)
         {
             if (eliminarCliente(c))
             {
-                agregarCliente(c);
+                if (agregarCliente(c))
+                {
+                    return true;
+                }
             }
+            return false;
         }
 
     }
