@@ -52,15 +52,22 @@ namespace VetApp
     }
 
     [Serializable]
-    class ConsultaVeterinaia
+    class Consulta
     {
+        public string cliente;
+        public string mascota;
+        public string razon;
+        public string estado;
+        public string tipoConsulta;
 
-    }
-
-    [Serializable]
-    class ConsultaPeluqueria
-    {
-
+        public Consulta (String cl, String mascota, String razon, String estado, String tc)
+        {
+            this.cliente = cl;
+            this.mascota = mascota;
+            this.razon = razon;
+            this.estado = estado;
+            this.tipoConsulta = tc;
+        }
     }
 
     /* Esta es la clase principal que se carga cuando arranca la app
@@ -71,15 +78,41 @@ namespace VetApp
     {
         public List<Mascota> mascotas;
         public List<Cliente> clientes;
-        public List<ConsultaVeterinaia> consultasVeterinaria;
-        public List<ConsultaPeluqueria> consultasPeluqueria;
+        public List<Consulta> consultas;
         
         public Veterinaria()
         {
             mascotas = new List<Mascota>();
             clientes = new List<Cliente>();
-            consultasVeterinaria = new List<ConsultaVeterinaia>();
-            consultasPeluqueria = new List<ConsultaPeluqueria>();
+            consultas = new List<Consulta>();
+        }
+        public bool agregarConsulta(Consulta con)
+        {
+            foreach (Consulta consulta in this.consultas)
+            {
+                if ((consulta.razon == con.razon) && (consulta.cliente == con.cliente))
+                {
+                    MessageBox.Show("Error: Ya existe una consulta de cliente " + con.cliente);
+                    return false;
+                }
+            }
+
+            consultas.Add(con);
+            return true;
+        }
+
+        public bool eliminarConsulta(Consulta con)
+        {
+            foreach (Consulta consulta in this.consultas)
+            {
+                if ((consulta.cliente == con.cliente ) && (consulta.razon == con.razon))
+                {
+                    this.consultas.Remove(con);
+                    return true;
+                }
+            }
+            MessageBox.Show("Error: No se pudo eliminar consulta de cliente " + con.cliente);
+            return false;
         }
 
         public void agregarMascota(Mascota m)
