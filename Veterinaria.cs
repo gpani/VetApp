@@ -59,14 +59,16 @@ namespace VetApp
         public string razon;
         public string estado;
         public string tipoConsulta;
+        public int nroConsulta;
 
-        public Consulta (String cl, String mascota, String razon, String estado, String tc)
+        public Consulta (String cl, String mascota, String razon, String estado, String tc, int nc)
         {
             this.cliente = cl;
             this.mascota = mascota;
             this.razon = razon;
             this.estado = estado;
             this.tipoConsulta = tc;
+            this.nroConsulta = nc;
         }
     }
 
@@ -88,30 +90,62 @@ namespace VetApp
         }
         public bool agregarConsulta(Consulta con)
         {
+            int contConsulta = 1;
             foreach (Consulta consulta in this.consultas)
             {
-                if ((consulta.razon == con.razon) && (consulta.cliente == con.cliente))
+                if ((consulta.razon == con.razon) && (consulta.cliente == con.cliente) && (consulta.mascota == con.mascota))
                 {
-                    MessageBox.Show("Error: Ya existe una consulta de cliente " + con.cliente);
+                    MessageBox.Show("Error: Ya existe una consulta de cliente " + con.nroConsulta);
                     return false;
                 }
+                contConsulta++;
             }
-
+            con.nroConsulta = contConsulta;
             consultas.Add(con);
             return true;
         }
 
         public bool eliminarConsulta(Consulta con)
         {
+            // int contConsulta = 1;
             foreach (Consulta consulta in this.consultas)
             {
-                if ((consulta.cliente == con.cliente ) && (consulta.razon == con.razon))
+                if ((consulta.nroConsulta == con.nroConsulta) || ((consulta.cliente == con.cliente) && (consulta.tipoConsulta == con.tipoConsulta) && (consulta.mascota == con.mascota)) )
                 {
                     this.consultas.Remove(con);
                     return true;
                 }
+            // contConsulta++;
             }
             MessageBox.Show("Error: No se pudo eliminar consulta de cliente " + con.cliente);
+            return false;
+        }
+
+        public bool modificarConsulta(Consulta con)
+        {
+            //int contConsulta = 1;
+
+            foreach (Consulta consulta in this.consultas)
+            {
+                if ((consulta.nroConsulta == con.nroConsulta) || ((consulta.cliente == con.cliente) && (consulta.tipoConsulta == con.tipoConsulta)) )
+                {
+                    consulta.cliente = con.cliente;
+                    consulta.mascota = con.mascota;
+                    consulta.razon= con.razon;
+                    consulta.estado = con.estado;
+                    consulta.tipoConsulta = con.tipoConsulta;
+
+                    /*        
+                        public string cliente;
+                        public string mascota;
+                        public string razon;
+                        public string estado;
+                        public string tipoConsulta;
+                    */
+                }
+                //contConsulta++;
+            }
+            MessageBox.Show("Error: No se pudo modificar la consulta con numero de consulta" + con.mascota);
             return false;
         }
 
@@ -150,13 +184,18 @@ namespace VetApp
 
         public bool modificarCliente(Cliente c)
         {
-            if (eliminarCliente(c))
+            foreach (Cliente cli in this.clientes)
             {
-                if (agregarCliente(c))
+                if ((cli.dni == c.dni))
                 {
-                    return true;
+                    cli.nombreApellido = c.nombreApellido;
+                    cli.edad = c.edad;
+                    cli.dni = c.dni;
+                    cli.telefono = c.telefono;
+                    cli.domicilio = c.domicilio;
                 }
             }
+            MessageBox.Show("Error: No se pudo modificar el cliente con DNI " + c.dni);
             return false;
         }
 
