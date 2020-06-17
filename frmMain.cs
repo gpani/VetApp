@@ -26,7 +26,7 @@ namespace VetApp
 
         private void btnTurnoVet_Click(object sender, EventArgs e)
         {
-            frmAppVet form = new frmAppVet();
+            frmApp form = new frmApp();
             form.Show();
         }
 
