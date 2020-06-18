@@ -190,6 +190,7 @@ namespace VetApp
                     cli.dni = c.dni;
                     cli.telefono = c.telefono;
                     cli.domicilio = c.domicilio;
+                    return true;
                 }
             }
             MessageBox.Show("Error: No se pudo modificar el cliente con DNI " + c.dni);
