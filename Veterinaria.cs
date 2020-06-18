@@ -49,6 +49,11 @@ namespace VetApp
             return this.nombreApellido;
         }
 
+        public bool coincideCon(Cliente c)
+        {
+            return (this.dni == c.dni);
+        }
+
     }
 
     [Serializable]
@@ -70,6 +75,11 @@ namespace VetApp
             this.tipoConsulta = tc;
             this.nroConsulta = nc;
         }
+
+        public bool coincideCon(Consulta c)
+        {
+            return (this.nroConsulta == c.nroConsulta);
+        }
     }
 
     /* Esta es la clase principal que se carga cuando arranca la app
@@ -81,7 +91,8 @@ namespace VetApp
         public List<Mascota> mascotas;
         public List<Cliente> clientes;
         public List<Consulta> consultas;
-        
+        public int ultimoNumeroConsulta = 1; /* el numero de consulta siempre se incrementa para evitar duplicados */
+
         public Veterinaria()
         {
             mascotas = new List<Mascota>();
@@ -90,32 +101,29 @@ namespace VetApp
         }
         public bool agregarConsulta(Consulta con)
         {
-            int contConsulta = 1;
             foreach (Consulta consulta in this.consultas)
             {
-                if ((consulta.razon == con.razon) && (consulta.cliente == con.cliente) && (consulta.mascota == con.mascota))
+                if (con.coincideCon(consulta))
                 {
-                    MessageBox.Show("Error: Ya existe una consulta de cliente " + con.nroConsulta);
+                    MessageBox.Show("Error: Ya existe una consulta de cliente con número " + con.nroConsulta);
                     return false;
                 }
-                contConsulta++;
             }
-            con.nroConsulta = contConsulta;
+            con.nroConsulta = this.ultimoNumeroConsulta + 1;
+            this.ultimoNumeroConsulta++;
             consultas.Add(con);
             return true;
         }
 
         public bool eliminarConsulta(Consulta con)
         {
-            // int contConsulta = 1;
             foreach (Consulta consulta in this.consultas)
             {
-                if ((consulta.nroConsulta == con.nroConsulta) || ((consulta.cliente == con.cliente) && (consulta.tipoConsulta == con.tipoConsulta) && (consulta.mascota == con.mascota)) )
+                if (consulta.coincideCon(con))
                 {
-                    this.consultas.Remove(con);
+                    this.consultas.Remove(consulta);
                     return true;
                 }
-            // contConsulta++;
             }
             MessageBox.Show("Error: No se pudo eliminar consulta de cliente " + con.cliente);
             return false;
@@ -123,29 +131,18 @@ namespace VetApp
 
         public bool modificarConsulta(Consulta con)
         {
-            //int contConsulta = 1;
-
             foreach (Consulta consulta in this.consultas)
             {
-                if ((consulta.nroConsulta == con.nroConsulta) || ((consulta.cliente == con.cliente) && (consulta.tipoConsulta == con.tipoConsulta)) )
+                if (con.coincideCon(consulta))
                 {
                     consulta.cliente = con.cliente;
                     consulta.mascota = con.mascota;
                     consulta.razon= con.razon;
                     consulta.estado = con.estado;
                     consulta.tipoConsulta = con.tipoConsulta;
-
-                    /*        
-                        public string cliente;
-                        public string mascota;
-                        public string razon;
-                        public string estado;
-                        public string tipoConsulta;
-                    */
                 }
-                //contConsulta++;
             }
-            MessageBox.Show("Error: No se pudo modificar la consulta con numero de consulta" + con.mascota);
+            MessageBox.Show("Error: No se pudo modificar la consulta con numero de consulta" + con.nroConsulta);
             return false;
         }
 
@@ -158,7 +155,7 @@ namespace VetApp
         {
             foreach (Cliente cli in this.clientes)
             {
-                if (cli.dni == c.dni)
+                if (cli.coincideCon(c))
                 {
                     MessageBox.Show("Error: Ya existe un cliente con DNI " + c.dni);
                     return false;
@@ -172,7 +169,7 @@ namespace VetApp
         {
             foreach (Cliente cli in this.clientes)
             {
-                if (cli.dni == c.dni)
+                if (cli.coincideCon(c))
                 {
                     this.clientes.Remove(cli);
                     return true;
@@ -186,7 +183,7 @@ namespace VetApp
         {
             foreach (Cliente cli in this.clientes)
             {
-                if ((cli.dni == c.dni))
+                if (cli.coincideCon(c))
                 {
                     cli.nombreApellido = c.nombreApellido;
                     cli.edad = c.edad;
