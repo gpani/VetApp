@@ -54,7 +54,7 @@ namespace VetApp
 
             foreach (Mascota element in Vet.mascotas)
             {
-                string[] fila = new string[] { element.nombre, element.edad.ToString(), element.duenno.nombreApellido, element.peso.ToString() };
+                string[] fila = new string[] { element.duenno.nombreApellido, element.nombre, element.raza, element.edad.ToString(),  element.peso.ToString() };
                 listadoMascotas.Rows.Add(fila);
             }
         }
