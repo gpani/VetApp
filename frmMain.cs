@@ -30,12 +30,6 @@ namespace VetApp
             form.Show();
         }
 
-        private void btnPelu_Click(object sender, EventArgs e)
-        {
-            frmTurnoPelu form = new frmTurnoPelu();
-            form.Show();
-        }
-
         private void btnClientes_Click(object sender, EventArgs e)
         {
             frmClient form = new frmClient();

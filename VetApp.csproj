@@ -70,12 +70,6 @@
     <Compile Include="frmMascotas.Designer.cs">
       <DependentUpon>frmMascotas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTurnoPelu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTurnoPelu.Designer.cs">
-      <DependentUpon>frmTurnoPelu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Veterinaria.cs" />
@@ -90,9 +84,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMascotas.resx">
       <DependentUpon>frmMascotas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTurnoPelu.resx">
-      <DependentUpon>frmTurnoPelu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
