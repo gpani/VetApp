@@ -36,13 +36,13 @@
             this.razaM = new System.Windows.Forms.Label();
             this.btnAgregarMascota = new System.Windows.Forms.Button();
             this.btnModificarMascota = new System.Windows.Forms.Button();
-            this.btnHistorialM = new System.Windows.Forms.Button();
             this.btnEliminarMascota = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPeso = new System.Windows.Forms.TextBox();
             this.pesoMascota = new System.Windows.Forms.Label();
             this.dueñoM = new System.Windows.Forms.Label();
             this.numEdadM = new System.Windows.Forms.NumericUpDown();
             this.comboCliente = new System.Windows.Forms.ComboBox();
+            this.comboVerMascota = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numEdadM)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +85,7 @@
             this.txtRazaM.Location = new System.Drawing.Point(39, 78);
             this.txtRazaM.Name = "txtRazaM";
             this.txtRazaM.Size = new System.Drawing.Size(334, 22);
-            this.txtRazaM.TabIndex = 5;
+            this.txtRazaM.TabIndex = 3;
             // 
             // razaM
             // 
@@ -98,47 +98,41 @@
             // 
             // btnAgregarMascota
             // 
-            this.btnAgregarMascota.Location = new System.Drawing.Point(25, 259);
+            this.btnAgregarMascota.Location = new System.Drawing.Point(39, 171);
             this.btnAgregarMascota.Name = "btnAgregarMascota";
             this.btnAgregarMascota.Size = new System.Drawing.Size(133, 94);
-            this.btnAgregarMascota.TabIndex = 7;
+            this.btnAgregarMascota.TabIndex = 6;
             this.btnAgregarMascota.Text = "Agregar Mascota";
             this.btnAgregarMascota.UseVisualStyleBackColor = true;
             this.btnAgregarMascota.Click += new System.EventHandler(this.btnAgregarMascota_Click);
             // 
             // btnModificarMascota
             // 
-            this.btnModificarMascota.Location = new System.Drawing.Point(164, 259);
+            this.btnModificarMascota.Location = new System.Drawing.Point(178, 200);
             this.btnModificarMascota.Name = "btnModificarMascota";
-            this.btnModificarMascota.Size = new System.Drawing.Size(133, 94);
+            this.btnModificarMascota.Size = new System.Drawing.Size(102, 65);
             this.btnModificarMascota.TabIndex = 8;
             this.btnModificarMascota.Text = "Modificar Mascota";
             this.btnModificarMascota.UseVisualStyleBackColor = true;
-            // 
-            // btnHistorialM
-            // 
-            this.btnHistorialM.Location = new System.Drawing.Point(304, 259);
-            this.btnHistorialM.Name = "btnHistorialM";
-            this.btnHistorialM.Size = new System.Drawing.Size(133, 94);
-            this.btnHistorialM.TabIndex = 9;
-            this.btnHistorialM.Text = "Ver Historial Médico";
-            this.btnHistorialM.UseVisualStyleBackColor = true;
+            this.btnModificarMascota.Click += new System.EventHandler(this.btnModificarMascota_Click);
             // 
             // btnEliminarMascota
             // 
-            this.btnEliminarMascota.Location = new System.Drawing.Point(443, 259);
+            this.btnEliminarMascota.Location = new System.Drawing.Point(286, 200);
             this.btnEliminarMascota.Name = "btnEliminarMascota";
-            this.btnEliminarMascota.Size = new System.Drawing.Size(133, 94);
-            this.btnEliminarMascota.TabIndex = 10;
+            this.btnEliminarMascota.Size = new System.Drawing.Size(100, 65);
+            this.btnEliminarMascota.TabIndex = 9;
             this.btnEliminarMascota.Text = "Eliminar Mascota";
             this.btnEliminarMascota.UseVisualStyleBackColor = true;
+            this.btnEliminarMascota.Click += new System.EventHandler(this.btnEliminarMascota_Click);
             // 
-            // textBox1
+            // txtPeso
             // 
-            this.textBox1.Location = new System.Drawing.Point(39, 110);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(334, 22);
-            this.textBox1.TabIndex = 11;
+            this.txtPeso.Location = new System.Drawing.Point(39, 110);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(334, 22);
+            this.txtPeso.TabIndex = 4;
+            this.txtPeso.TextChanged += new System.EventHandler(this.txtPeso_TextChanged);
             // 
             // pesoMascota
             // 
@@ -164,7 +158,7 @@
             this.numEdadM.Location = new System.Drawing.Point(39, 50);
             this.numEdadM.Name = "numEdadM";
             this.numEdadM.Size = new System.Drawing.Size(334, 22);
-            this.numEdadM.TabIndex = 15;
+            this.numEdadM.TabIndex = 2;
             // 
             // comboCliente
             // 
@@ -172,20 +166,31 @@
             this.comboCliente.Location = new System.Drawing.Point(39, 141);
             this.comboCliente.Name = "comboCliente";
             this.comboCliente.Size = new System.Drawing.Size(334, 24);
-            this.comboCliente.TabIndex = 16;
+            this.comboCliente.TabIndex = 5;
+            this.comboCliente.SelectedIndexChanged += new System.EventHandler(this.comboCliente_SelectedIndexChanged);
+            // 
+            // comboVerMascota
+            // 
+            this.comboVerMascota.FormattingEnabled = true;
+            this.comboVerMascota.Location = new System.Drawing.Point(178, 171);
+            this.comboVerMascota.Name = "comboVerMascota";
+            this.comboVerMascota.Size = new System.Drawing.Size(208, 24);
+            this.comboVerMascota.TabIndex = 7;
+            this.comboVerMascota.Text = "Elegir mascota  existente...";
+            this.comboVerMascota.SelectedIndexChanged += new System.EventHandler(this.comboVerMascota_SelectedIndexChanged);
             // 
             // frmMascotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 393);
+            this.ClientSize = new System.Drawing.Size(500, 304);
+            this.Controls.Add(this.comboVerMascota);
             this.Controls.Add(this.comboCliente);
             this.Controls.Add(this.numEdadM);
             this.Controls.Add(this.dueñoM);
             this.Controls.Add(this.pesoMascota);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.btnEliminarMascota);
-            this.Controls.Add(this.btnHistorialM);
             this.Controls.Add(this.btnModificarMascota);
             this.Controls.Add(this.btnAgregarMascota);
             this.Controls.Add(this.razaM);
@@ -196,6 +201,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmMascotas";
             this.Text = "Datos Mascotas";
+            this.Load += new System.EventHandler(this.frmMascotas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numEdadM)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -212,12 +218,12 @@
         private System.Windows.Forms.Label razaM;
         private System.Windows.Forms.Button btnAgregarMascota;
         private System.Windows.Forms.Button btnModificarMascota;
-        private System.Windows.Forms.Button btnHistorialM;
         private System.Windows.Forms.Button btnEliminarMascota;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.Label pesoMascota;
         private System.Windows.Forms.Label dueñoM;
         private System.Windows.Forms.NumericUpDown numEdadM;
         private System.Windows.Forms.ComboBox comboCliente;
+        private System.Windows.Forms.ComboBox comboVerMascota;
     }
 }

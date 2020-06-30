@@ -12,17 +12,29 @@ namespace VetApp
     [Serializable]
     class Mascota
     {
-        String nombre;
-        String raza;
-        int edad;
-        Cliente duenno;
+        public String nombre;
+        public String raza;
+        public int edad;
+        public Cliente duenno;
+        public float peso;
 
-        public Mascota(String nombre, String raza, int edad, Cliente duenno)
+        public Mascota(String nombre, String raza, int edad, Cliente duenno, float peso)
         {
             this.nombre = nombre;
             this.raza = raza;
             this.edad = edad;
             this.duenno = duenno;
+            this.peso = peso;
+        }
+
+        public override string ToString()
+        {
+            return this.nombre;
+        }
+
+        public bool coincideCon(Mascota m)
+        {
+            return ((this.nombre == m.nombre) && (this.duenno.coincideCon(m.duenno)));
         }
     }
 
@@ -80,6 +92,11 @@ namespace VetApp
         {
             return (this.nroConsulta == c.nroConsulta);
         }
+
+        public override string ToString()
+        {
+            return this.nroConsulta.ToString();
+        }
     }
 
     /* Esta es la clase principal que se carga cuando arranca la app
@@ -109,9 +126,8 @@ namespace VetApp
                     return false;
                 }
             }
-            con.nroConsulta = this.ultimoNumeroConsulta + 1;
-            this.ultimoNumeroConsulta++;
             consultas.Add(con);
+            this.ultimoNumeroConsulta++;
             return true;
         }
 
@@ -140,15 +156,57 @@ namespace VetApp
                     consulta.razon= con.razon;
                     consulta.estado = con.estado;
                     consulta.tipoConsulta = con.tipoConsulta;
+                    return true;
                 }
             }
-            MessageBox.Show("Error: No se pudo modificar la consulta con numero de consulta" + con.nroConsulta);
+            MessageBox.Show("Error: No se pudo modificar la consulta con numero de consulta " + con.nroConsulta);
             return false;
         }
 
-        public void agregarMascota(Mascota m)
+        public bool agregarMascota(Mascota m)
         {
+            foreach(Mascota mascota in this.mascotas)
+            {
+                if (m.coincideCon(mascota))
+                {
+                    MessageBox.Show("Error: Ya existe una mascota " + m.nombre + " de " + m.duenno.nombreApellido );
+                    return false;
+                }
+            }
             mascotas.Add(m);
+            return true;
+        }
+
+        public bool eliminarMascota(Mascota m)
+        {
+            foreach (Mascota mascota in this.mascotas)
+            {
+                if (mascota.coincideCon(m))
+                {
+                    this.mascotas.Remove(mascota);
+                    return true;
+                }
+            }
+            MessageBox.Show("Error: No se pudo eliminar mascota " + m.nombre);
+            return false;
+        }
+
+        public bool modificarMascota(Mascota m)
+        {
+            foreach (Mascota mascota in this.mascotas)
+            {
+                if (m.coincideCon(mascota))
+                {
+                    mascota.nombre = m.nombre;
+                    mascota.edad = m.edad;
+                    mascota.raza = m.raza;
+                    mascota.peso = m.peso;
+                    mascota.duenno = m.duenno;
+                    return true;
+                }
+            }
+            MessageBox.Show("Error: No se pudo modificar la mascota " + m.nombre);
+            return false;
         }
 
         public bool agregarCliente(Cliente c)
