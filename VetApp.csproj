@@ -70,6 +70,12 @@
     <Compile Include="frmMascotas.Designer.cs">
       <DependentUpon>frmMascotas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrint.Designer.cs">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTurnoPelu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <EmbeddedResource Include="frmMascotas.resx">
       <DependentUpon>frmMascotas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPrint.resx">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTurnoPelu.resx">
       <DependentUpon>frmTurnoPelu.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +112,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Cliente.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

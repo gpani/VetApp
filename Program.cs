@@ -17,7 +17,7 @@ namespace VetApp
             return Vet;
         }
 
-        private static void cargarDatos()
+        public static void cargarDatos()
         {
             try
             {

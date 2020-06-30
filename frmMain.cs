@@ -18,7 +18,6 @@ namespace VetApp
 
         }
 
-
         private void btnSalida_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -47,6 +46,10 @@ namespace VetApp
             frmMascotas form = new frmMascotas ();
             form.Show();
         }
-
+        private void btnQuery_Click(object sender, EventArgs e)
+        {
+            frmPrint form = new frmPrint();
+            form.Show();
+        }
     }
 }

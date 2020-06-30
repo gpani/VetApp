@@ -32,6 +32,7 @@
             this.btnMascotas = new System.Windows.Forms.Button();
             this.btnTurnoVet = new System.Windows.Forms.Button();
             this.btnSalida = new System.Windows.Forms.Button();
+            this.btnQuery = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnClientes
@@ -71,7 +72,7 @@
             // 
             this.btnSalida.BackColor = System.Drawing.SystemColors.Control;
             this.btnSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalida.Location = new System.Drawing.Point(9, 200);
+            this.btnSalida.Location = new System.Drawing.Point(8, 264);
             this.btnSalida.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalida.Name = "btnSalida";
             this.btnSalida.Size = new System.Drawing.Size(154, 32);
@@ -80,11 +81,22 @@
             this.btnSalida.UseVisualStyleBackColor = false;
             this.btnSalida.Click += new System.EventHandler(this.btnSalida_Click);
             // 
+            // btnQuery
+            // 
+            this.btnQuery.Location = new System.Drawing.Point(8, 200);
+            this.btnQuery.Name = "btnQuery";
+            this.btnQuery.Size = new System.Drawing.Size(152, 56);
+            this.btnQuery.TabIndex = 6;
+            this.btnQuery.Text = "Registros";
+            this.btnQuery.UseVisualStyleBackColor = true;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(175, 238);
+            this.ClientSize = new System.Drawing.Size(175, 303);
+            this.Controls.Add(this.btnQuery);
             this.Controls.Add(this.btnSalida);
             this.Controls.Add(this.btnTurnoVet);
             this.Controls.Add(this.btnMascotas);
@@ -102,6 +114,7 @@
         private System.Windows.Forms.Button btnMascotas;
         private System.Windows.Forms.Button btnTurnoVet;
         private System.Windows.Forms.Button btnSalida;
+        private System.Windows.Forms.Button btnQuery;
     }
 }
 
