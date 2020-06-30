@@ -71,7 +71,7 @@ namespace VetApp
 
             foreach (Consulta element in Vet.consultas)
             {
-                string[] fila = new string[] { element.nroConsulta.ToString(), element.cliente, element.mascota, element.razon, element.tipoConsulta,  element.estado };
+                string[] fila = new string[] { element.nroConsulta.ToString(), element.cliente.nombreApellido, element.mascota.nombre, element.razon, element.tipoConsulta,  element.estado };
                 listadoTurnos.Rows.Add(fila);
             }
         }

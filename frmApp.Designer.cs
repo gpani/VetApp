@@ -33,8 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.razonInput = new System.Windows.Forms.TextBox();
-            this.mascotaInput = new System.Windows.Forms.TextBox();
-            this.clienteInput = new System.Windows.Forms.TextBox();
             this.deleteConsulta = new System.Windows.Forms.Button();
             this.editConsulta = new System.Windows.Forms.Button();
             this.addConsulta = new System.Windows.Forms.Button();
@@ -44,6 +42,8 @@
             this.nmbrInput = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboConsulta = new System.Windows.Forms.ComboBox();
+            this.comboCliente = new System.Windows.Forms.ComboBox();
+            this.comboMascota = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label4
@@ -93,22 +93,6 @@
             this.razonInput.Name = "razonInput";
             this.razonInput.Size = new System.Drawing.Size(223, 22);
             this.razonInput.TabIndex = 4;
-            // 
-            // mascotaInput
-            // 
-            this.mascotaInput.Location = new System.Drawing.Point(11, 121);
-            this.mascotaInput.Margin = new System.Windows.Forms.Padding(4);
-            this.mascotaInput.Name = "mascotaInput";
-            this.mascotaInput.Size = new System.Drawing.Size(223, 22);
-            this.mascotaInput.TabIndex = 3;
-            // 
-            // clienteInput
-            // 
-            this.clienteInput.Location = new System.Drawing.Point(11, 89);
-            this.clienteInput.Margin = new System.Windows.Forms.Padding(4);
-            this.clienteInput.Name = "clienteInput";
-            this.clienteInput.Size = new System.Drawing.Size(223, 22);
-            this.clienteInput.TabIndex = 2;
             // 
             // deleteConsulta
             // 
@@ -209,11 +193,30 @@
             this.comboConsulta.Text = "Ver consulta existente...";
             this.comboConsulta.SelectedIndexChanged += new System.EventHandler(this.comboConsulta_SelectedIndexChanged);
             // 
+            // comboCliente
+            // 
+            this.comboCliente.FormattingEnabled = true;
+            this.comboCliente.Location = new System.Drawing.Point(11, 89);
+            this.comboCliente.Name = "comboCliente";
+            this.comboCliente.Size = new System.Drawing.Size(223, 24);
+            this.comboCliente.TabIndex = 30;
+            this.comboCliente.SelectedIndexChanged += new System.EventHandler(this.comboCliente_SelectedIndexChanged);
+            // 
+            // comboMascota
+            // 
+            this.comboMascota.FormattingEnabled = true;
+            this.comboMascota.Location = new System.Drawing.Point(11, 121);
+            this.comboMascota.Name = "comboMascota";
+            this.comboMascota.Size = new System.Drawing.Size(223, 24);
+            this.comboMascota.TabIndex = 31;
+            // 
             // frmApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(407, 341);
+            this.Controls.Add(this.comboMascota);
+            this.Controls.Add(this.comboCliente);
             this.Controls.Add(this.comboConsulta);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -224,9 +227,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.razonInput);
-            this.Controls.Add(this.mascotaInput);
             this.Controls.Add(this.nmbrInput);
-            this.Controls.Add(this.clienteInput);
             this.Controls.Add(this.deleteConsulta);
             this.Controls.Add(this.editConsulta);
             this.Controls.Add(this.addConsulta);
@@ -246,8 +247,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox razonInput;
-        private System.Windows.Forms.TextBox mascotaInput;
-        private System.Windows.Forms.TextBox clienteInput;
         private System.Windows.Forms.Button deleteConsulta;
         private System.Windows.Forms.Button editConsulta;
         private System.Windows.Forms.Button addConsulta;
@@ -257,5 +256,7 @@
         private System.Windows.Forms.TextBox nmbrInput;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboConsulta;
+        private System.Windows.Forms.ComboBox comboCliente;
+        private System.Windows.Forms.ComboBox comboMascota;
     }
 }

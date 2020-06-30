@@ -71,14 +71,14 @@ namespace VetApp
     [Serializable]
     class Consulta
     {
-        public string cliente;
-        public string mascota;
+        public Cliente cliente;
+        public Mascota mascota;
         public string razon;
         public string estado;
         public string tipoConsulta;
         public int nroConsulta;
 
-        public Consulta (String cl, String mascota, String razon, String estado, String tc, int nc)
+        public Consulta (Cliente cl, Mascota mascota, String razon, String estado, String tc, int nc)
         {
             this.cliente = cl;
             this.mascota = mascota;
