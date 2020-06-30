@@ -30,23 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             this.listadoMascotas = new System.Windows.Forms.DataGridView();
-            this.dataSet1 = new System.Data.DataSet();
-            this.cargarClientes = new System.Windows.Forms.Button();
-            this.cargarMascotas = new System.Windows.Forms.Button();
-            this.cargarTurnos = new System.Windows.Forms.Button();
-            this.listadoClientes = new System.Windows.Forms.DataGridView();
-            this.listadoTurnos = new System.Windows.Forms.DataGridView();
-            this.nombreCli = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dueñoMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomMas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razaMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edadMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pesoMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new System.Data.DataSet();
+            this.cargarClientes = new System.Windows.Forms.Button();
+            this.cargarMascotas = new System.Windows.Forms.Button();
+            this.cargarTurnos = new System.Windows.Forms.Button();
+            this.listadoClientes = new System.Windows.Forms.DataGridView();
+            this.nombreCli = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listadoTurnos = new System.Windows.Forms.DataGridView();
+            this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.veterinariaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mascotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -54,17 +60,11 @@
             this.clienteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.programBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.razon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listadoMascotas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoTurnos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.veterinariaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).BeginInit();
@@ -86,12 +86,41 @@
             this.edadMascota,
             this.pesoMascota});
             this.listadoMascotas.DataSource = this.clienteBindingSource;
-            this.listadoMascotas.Location = new System.Drawing.Point(8, 16);
+            this.listadoMascotas.Location = new System.Drawing.Point(8, 8);
             this.listadoMascotas.Name = "listadoMascotas";
             this.listadoMascotas.Size = new System.Drawing.Size(784, 376);
             this.listadoMascotas.TabIndex = 2;
             this.listadoMascotas.Visible = false;
             this.listadoMascotas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoHistorial_CellContentClick);
+            // 
+            // dueñoMascota
+            // 
+            this.dueñoMascota.HeaderText = "Dueño";
+            this.dueñoMascota.Name = "dueñoMascota";
+            // 
+            // nomMas
+            // 
+            this.nomMas.HeaderText = "Mascota";
+            this.nomMas.Name = "nomMas";
+            // 
+            // razaMascota
+            // 
+            this.razaMascota.HeaderText = "Raza";
+            this.razaMascota.Name = "razaMascota";
+            // 
+            // edadMascota
+            // 
+            this.edadMascota.HeaderText = "Edad";
+            this.edadMascota.Name = "edadMascota";
+            // 
+            // pesoMascota
+            // 
+            this.pesoMascota.HeaderText = "Peso";
+            this.pesoMascota.Name = "pesoMascota";
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(VetApp.Cliente);
             // 
             // dataSet1
             // 
@@ -139,31 +168,12 @@
             this.tel,
             this.direccion});
             this.listadoClientes.DataSource = this.clienteBindingSource;
-            this.listadoClientes.Location = new System.Drawing.Point(8, 32);
+            this.listadoClientes.Location = new System.Drawing.Point(8, 8);
             this.listadoClientes.Name = "listadoClientes";
             this.listadoClientes.Size = new System.Drawing.Size(784, 376);
             this.listadoClientes.TabIndex = 4;
             this.listadoClientes.Visible = false;
-            // 
-            // listadoTurnos
-            // 
-            this.listadoTurnos.AllowUserToAddRows = false;
-            this.listadoTurnos.AutoGenerateColumns = false;
-            this.listadoTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listadoTurnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nro,
-            this.nombreCliente,
-            this.nombreMascota,
-            this.razon,
-            this.tipoConsulta,
-            this.estadoConsulta});
-            this.listadoTurnos.DataSource = this.clienteBindingSource;
-            this.listadoTurnos.Location = new System.Drawing.Point(8, 48);
-            this.listadoTurnos.Name = "listadoTurnos";
-            this.listadoTurnos.Size = new System.Drawing.Size(784, 376);
-            this.listadoTurnos.TabIndex = 5;
-            this.listadoTurnos.Visible = false;
-            this.listadoTurnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoTurnos_CellContentClick);
+            this.listadoClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoClientes_CellContentClick);
             // 
             // nombreCli
             // 
@@ -190,62 +200,25 @@
             this.direccion.HeaderText = "Dirección";
             this.direccion.Name = "direccion";
             // 
-            // dueñoMascota
+            // listadoTurnos
             // 
-            this.dueñoMascota.HeaderText = "Dueño";
-            this.dueñoMascota.Name = "dueñoMascota";
-            // 
-            // nomMas
-            // 
-            this.nomMas.HeaderText = "Mascota";
-            this.nomMas.Name = "nomMas";
-            // 
-            // razaMascota
-            // 
-            this.razaMascota.HeaderText = "Raza";
-            this.razaMascota.Name = "razaMascota";
-            // 
-            // edadMascota
-            // 
-            this.edadMascota.HeaderText = "Edad";
-            this.edadMascota.Name = "edadMascota";
-            // 
-            // pesoMascota
-            // 
-            this.pesoMascota.HeaderText = "Peso";
-            this.pesoMascota.Name = "pesoMascota";
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(VetApp.Cliente);
-            // 
-            // clienteBindingSource3
-            // 
-            this.clienteBindingSource3.DataSource = typeof(VetApp.Cliente);
-            // 
-            // veterinariaBindingSource
-            // 
-            this.veterinariaBindingSource.DataSource = typeof(VetApp.Veterinaria);
-            // 
-            // mascotaBindingSource
-            // 
-            this.mascotaBindingSource.DataSource = typeof(VetApp.Mascota);
-            // 
-            // clienteBindingSource1
-            // 
-            this.clienteBindingSource1.DataSource = typeof(VetApp.Cliente);
-            // 
-            // clienteBindingSource2
-            // 
-            this.clienteBindingSource2.DataSource = typeof(VetApp.Cliente);
-            // 
-            // programBindingSource
-            // 
-            this.programBindingSource.DataSource = typeof(VetApp.Program);
-            // 
-            // programBindingSource1
-            // 
-            this.programBindingSource1.DataSource = typeof(VetApp.Program);
+            this.listadoTurnos.AllowUserToAddRows = false;
+            this.listadoTurnos.AutoGenerateColumns = false;
+            this.listadoTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listadoTurnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nro,
+            this.nombreCliente,
+            this.nombreMascota,
+            this.razon,
+            this.tipoConsulta,
+            this.estadoConsulta});
+            this.listadoTurnos.DataSource = this.clienteBindingSource;
+            this.listadoTurnos.Location = new System.Drawing.Point(8, 8);
+            this.listadoTurnos.Name = "listadoTurnos";
+            this.listadoTurnos.Size = new System.Drawing.Size(784, 376);
+            this.listadoTurnos.TabIndex = 5;
+            this.listadoTurnos.Visible = false;
+            this.listadoTurnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoTurnos_CellContentClick);
             // 
             // nro
             // 
@@ -277,6 +250,34 @@
             this.estadoConsulta.HeaderText = "Estado de Consulta";
             this.estadoConsulta.Name = "estadoConsulta";
             // 
+            // clienteBindingSource3
+            // 
+            this.clienteBindingSource3.DataSource = typeof(VetApp.Cliente);
+            // 
+            // veterinariaBindingSource
+            // 
+            this.veterinariaBindingSource.DataSource = typeof(VetApp.Veterinaria);
+            // 
+            // mascotaBindingSource
+            // 
+            this.mascotaBindingSource.DataSource = typeof(VetApp.Mascota);
+            // 
+            // clienteBindingSource1
+            // 
+            this.clienteBindingSource1.DataSource = typeof(VetApp.Cliente);
+            // 
+            // clienteBindingSource2
+            // 
+            this.clienteBindingSource2.DataSource = typeof(VetApp.Cliente);
+            // 
+            // programBindingSource
+            // 
+            this.programBindingSource.DataSource = typeof(VetApp.Program);
+            // 
+            // programBindingSource1
+            // 
+            this.programBindingSource1.DataSource = typeof(VetApp.Program);
+            // 
             // frmPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,10 +293,10 @@
             this.Text = "frmPrint";
             this.Load += new System.EventHandler(this.frmPrint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listadoMascotas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoTurnos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.veterinariaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).EndInit();

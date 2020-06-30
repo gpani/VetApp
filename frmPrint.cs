@@ -44,7 +44,6 @@ namespace VetApp
 
         private void cargarMascotas_Click(object sender, EventArgs e)
         {
-            return;
             this.listadoMascotas.DataSource = null;
             this.listadoMascotas.Rows.Clear();
             this.listadoMascotas.Refresh();
@@ -55,7 +54,7 @@ namespace VetApp
 
             foreach (Mascota element in Vet.mascotas)
             {
-                string[] fila = new string[] { element.nombre, element.edad.ToString(), element.duenno, element.peso };
+                string[] fila = new string[] { element.nombre, element.edad.ToString(), element.duenno.nombreApellido, element.peso.ToString() };
                 listadoMascotas.Rows.Add(fila);
             }
         }
@@ -87,6 +86,9 @@ namespace VetApp
 
         }
 
+        private void listadoClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }
