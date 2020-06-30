@@ -16,15 +16,14 @@ namespace VetApp
         {
             InitializeComponent();
         }
-
-        private void frmPrint_Load(object sender, EventArgs e)
+        public void frmPrint_Load(object sender, EventArgs e)
         {
-            
-        }
+            Veterinaria Vet = Program.getVeterinaria();
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            foreach (Veterinaria element in Vet)
+            {
+                
+            }
         }
     }
 }

@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnQueryCliente = new System.Windows.Forms.Button();
-            this.btnQueryConsulta = new System.Windows.Forms.Button();
-            this.btnQueryMascota = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.listadoHistorial = new System.Windows.Forms.DataGridView();
             this.clienteBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.veterinariaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mascotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -42,7 +39,14 @@
             this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.programBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new System.Data.DataSet();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.nombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoHistorial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.veterinariaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).BeginInit();
@@ -54,44 +58,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnQueryCliente
+            // listadoHistorial
             // 
-            this.btnQueryCliente.Location = new System.Drawing.Point(8, 8);
-            this.btnQueryCliente.Name = "btnQueryCliente";
-            this.btnQueryCliente.Size = new System.Drawing.Size(144, 64);
-            this.btnQueryCliente.TabIndex = 1;
-            this.btnQueryCliente.Text = "Mostrar Clientes";
-            this.btnQueryCliente.UseVisualStyleBackColor = true;
-            // 
-            // btnQueryConsulta
-            // 
-            this.btnQueryConsulta.Location = new System.Drawing.Point(648, 8);
-            this.btnQueryConsulta.Name = "btnQueryConsulta";
-            this.btnQueryConsulta.Size = new System.Drawing.Size(144, 64);
-            this.btnQueryConsulta.TabIndex = 1;
-            this.btnQueryConsulta.Text = "Mostrar Consultas";
-            this.btnQueryConsulta.UseVisualStyleBackColor = true;
-            // 
-            // btnQueryMascota
-            // 
-            this.btnQueryMascota.Location = new System.Drawing.Point(328, 8);
-            this.btnQueryMascota.Name = "btnQueryMascota";
-            this.btnQueryMascota.Size = new System.Drawing.Size(144, 64);
-            this.btnQueryMascota.TabIndex = 1;
-            this.btnQueryMascota.Text = "Mostrar Mascotas";
-            this.btnQueryMascota.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.clienteBindingSource3;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 104);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(784, 328);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.listadoHistorial.AllowUserToAddRows = false;
+            this.listadoHistorial.AutoGenerateColumns = false;
+            this.listadoHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listadoHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombreCliente,
+            this.nombreMascota,
+            this.dni,
+            this.nroTelefono,
+            this.tipoConsulta,
+            this.estadoConsulta,
+            this.direccion});
+            this.listadoHistorial.DataSource = this.clienteBindingSource;
+            this.listadoHistorial.Location = new System.Drawing.Point(8, 8);
+            this.listadoHistorial.Name = "listadoHistorial";
+            this.listadoHistorial.Size = new System.Drawing.Size(784, 424);
+            this.listadoHistorial.TabIndex = 2;
+            //this.listadoHistorial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoHistorial_CellContentClick);
             // 
             // clienteBindingSource3
             // 
@@ -129,19 +114,51 @@
             // 
             this.dataSet1.DataSetName = "NewDataSet";
             // 
+            // nombreCliente
+            // 
+            this.nombreCliente.HeaderText = "Cliente";
+            this.nombreCliente.Name = "nombreCliente";
+            // 
+            // nombreMascota
+            // 
+            this.nombreMascota.HeaderText = "Mascota";
+            this.nombreMascota.Name = "nombreMascota";
+            // 
+            // dni
+            // 
+            this.dni.HeaderText = "DNI";
+            this.dni.Name = "dni";
+            // 
+            // nroTelefono
+            // 
+            this.nroTelefono.HeaderText = "Número de Teléfono";
+            this.nroTelefono.Name = "nroTelefono";
+            // 
+            // tipoConsulta
+            // 
+            this.tipoConsulta.HeaderText = "Tipo de Consulta";
+            this.tipoConsulta.Name = "tipoConsulta";
+            // 
+            // estadoConsulta
+            // 
+            this.estadoConsulta.HeaderText = "Estado de Consulta";
+            this.estadoConsulta.Name = "estadoConsulta";
+            // 
+            // direccion
+            // 
+            this.direccion.HeaderText = "Dirección";
+            this.direccion.Name = "direccion";
+            // 
             // frmPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnQueryMascota);
-            this.Controls.Add(this.btnQueryConsulta);
-            this.Controls.Add(this.btnQueryCliente);
+            this.Controls.Add(this.listadoHistorial);
             this.Name = "frmPrint";
             this.Text = "frmPrint";
             this.Load += new System.EventHandler(this.frmPrint_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoHistorial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.veterinariaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).EndInit();
@@ -157,17 +174,21 @@
 
         #endregion
         private System.Windows.Forms.BindingSource clienteBindingSource;
-        private System.Windows.Forms.Button btnQueryCliente;
-        private System.Windows.Forms.Button btnQueryConsulta;
-        private System.Windows.Forms.Button btnQueryMascota;
         private System.Windows.Forms.BindingSource clienteBindingSource1;
         private System.Windows.Forms.BindingSource mascotaBindingSource;
         private System.Windows.Forms.BindingSource programBindingSource;
         private System.Windows.Forms.BindingSource clienteBindingSource2;
         private System.Windows.Forms.BindingSource veterinariaBindingSource;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView listadoHistorial;
         private System.Windows.Forms.BindingSource clienteBindingSource3;
         private System.Windows.Forms.BindingSource programBindingSource1;
         private System.Data.DataSet dataSet1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreMascota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoConsulta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoConsulta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
     }
 }
